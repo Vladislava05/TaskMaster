@@ -5,5 +5,4 @@
  
  You can download this repository and open it on you PC with Visual Code
  
- <img src="..todo/Preview.jpeg">
  
