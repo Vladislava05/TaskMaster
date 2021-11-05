@@ -12,4 +12,11 @@
 
 Clone this repository and open it with your code editor(Visual Code in my case), then add "python manage.py runserver" in the terminal and follow the link!
  
- 
+## Installation
+
+```console
+foo@bar: TaskMaster $ heroku create
+foo@bar: TaskMaster $ git push heroku main
+foo@bar: TaskMaster $ heroku run python manage.py migrate
+```
+
