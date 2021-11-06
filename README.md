@@ -10,7 +10,7 @@
   1. Django 3.0
   2. Python 3.7+
 
-Clone this repository and open it with your code editor(Visual Code in my case), then add "python manage.py runserver" in the terminal and follow the link!
+Link to our web-app: https://todo-vladislava.herokuapp.com/
  
 ## Installation
 
