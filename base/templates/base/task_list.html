@@ -25,7 +25,7 @@
 <ul class="ddropdownn">
         
     <li class="ddropdownn-top">
-        <a class="ddropdownn-top" href="/">Menu</a>
+    <a class="ddropdownn-top" href="#">Menu</a>
             <ul class="ddropdownn-inside">
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -57,7 +57,7 @@
         <input type='text' name='search-area' value="{{search_input}}">
         <input class="button" type="submit" value='Search'>
     </form>
-    <a class="button" id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+    <a class="button btn-create" id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
 </div>
 
 
@@ -69,7 +69,7 @@
         
     
       <div class="task-wrapper" >
-          {% if task.complete %}
+        {% if task.complete %}
                 
                 <div class="task-title">
                     <div class="task-complete-icon"></div>
@@ -79,14 +79,19 @@
 
                 </div>
                 <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-          {% else %}
+            
+        {% else %}
           <div class="task-title">
             <div class="task-incomplete-icon"></div>
             <a href="{% url 'task-update' task.id %}">{{task}}</a>
         </div>
         <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-          {% endif %}
+        
+              
+        {% endif %}
+
           
+               
 
       </div>
     {% empty %}

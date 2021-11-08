@@ -137,6 +137,10 @@
                 text-decoration: none;
             }
 
+            .btn-create{
+                margin-top: 22px;
+            }
+
             .button:hover {
                 color: #FAFAFA;
 	            background-color: #EB796F;
@@ -145,17 +149,22 @@
             .card-body {
                 padding: 20px;
             }
-            ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative; }
+
+ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative;
+     }
 ul.ddropdownn, ul.ddropdownn-inside {
     /* Отступы на нуле. */
     padding: 0;
     /* Маркеры уберем. */
     list-style-type: none;
+    
     }
 ul.ddropdownn-inside {
     /* Спрячем дочерние элементы выпадающего списка. */
     left: -9999px;
     position: absolute;
+    display: none;
+    
     }
 ul.ddropdownn li.ddropdownn-top {
     /* Небольшой отступ. */
@@ -169,6 +178,7 @@ ul.ddropdownn li.ddropdownn-top a {
     display: block;
     /* Снова отступы. */
     padding: 3px 10px 4px;
+    
     }
 ul.ddropdownn a.ddropdownn-top {/* Цвет фона. */ background: #EB796F; }
 ul.ddropdownn a.ddropdownn-top:hover {/* Отступы. */ padding: 3px 10px 4px; }
@@ -176,9 +186,12 @@ ul.ddropdownn li.ddropdownn-top:hover .ddropdownn-inside {
     left: 0;
     /* Делаю элементы блочными. */
     display: block;
+    
     }
 ul.ddropdownn .ddropdownn-inside {/* Цвет фона. */ background: #EB796F; }
 ul.ddropdownn .ddropdownn-inside a:hover {/* Цвет фона изменится при наведении. */ background: #EEA390; }
+
+
 
            
           
