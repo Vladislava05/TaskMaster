@@ -7,6 +7,7 @@
 
 <html>
     <head>
+       
         <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -31,7 +32,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allison&family=Inconsolata:wght@200;300&display=swap" rel="stylesheet">
+
         <link rel="shortcut icon" href="{% static 'base/favicons/favicon.png' %}"/>
+
+
         <style>
             body{
                 background-color:floralwhite;
@@ -170,6 +174,58 @@
                 padding: 20px;
             }
 
+            
+.social-link{
+    display: block;
+    width: 33px;
+    height: 33px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    background-color: #FFD723;
+    border-radius: 100%;
+    opacity: 0.4;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.social-link:hover{
+    opacity: 1;
+}
+
+
+.social-content{
+    max-width: 550px;
+    margin: auto;
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color:floralwhite;
+    
+    
+}
+.social-link-fb{
+   background-image: url({% static 'base/images/icons8-facebook-f.svg' %});
+}
+.social-link-tw{
+    background-image:url({% static 'base/images/icons8-twitter.svg' %});
+}
+.social-link-vk{
+    background-image:url({% static 'base/images/vk-link.svg' %});
+    
+}
+.list-reset{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.social-item:not(:last-child){
+    margin-right: 11px;
+}
+
 ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative;
      }
 ul.ddropdownn, ul.ddropdownn-inside {
@@ -223,6 +279,17 @@ ul.ddropdownn .ddropdownn-inside a:hover {/* Цвет фона изменитс�
 
             {% endblock content %}
         </div>
-        
+        <div class="social-content">
+            {% block footer %}
+          
+            <ul class="social list-reset">
+                <li class="social-item"><a href="#" class="social-link social-link-fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                
+                <li class="social-item"><a href="#" class="social-link social-link-tw" target="_blank" aria-label="Link to Twitter"></a></li>
+                <li class="social-item"><a href="#" class="social-link social-link-vk" target="_blank" aria-label="Link to social-link-vk"></a></li>
+                
+              </ul>
+            {% endblock footer %}
+        </div>
     </body>
 </html>

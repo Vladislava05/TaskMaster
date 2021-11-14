@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib import admin
-
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import TaskList, TaskDetail, TaskCreate, TaskUpdate, DeleteView, CustomLoginView, RegisterPage, About
 
 from django.contrib.auth.views import LogoutView
@@ -21,4 +22,4 @@ urlpatterns = [
  
     
     
-]
+] 
