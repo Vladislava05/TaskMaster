@@ -11,6 +11,13 @@
   2. Python 3.7+
 
 Link to our web-app: https://todo-vladislava.herokuapp.com/
+
+Join us!
+
+Our Facebook: https://www.facebook.com/groups/295736722419986
+
+Our Twitter: https://twitter.com/VlaDis005
+
  
 ## Installation
 
