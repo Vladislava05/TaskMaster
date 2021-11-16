@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -10,9 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from .models import Task
-
-
-
 
 
 
@@ -67,6 +65,12 @@ class TaskDetail(LoginRequiredMixin, DetailView):
     context_object_name = 'task'
     template_name = 'base/task.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        task=self.get_object()
+        if task.user != self.request.user:
+            raise Http404("You don't have permission to view this Task")
+        return super().dispatch(request, *args, **kwargs)
+
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ['title', 'description','complete']
@@ -80,6 +84,12 @@ class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('tasks')
+
+    def dispatch(self, request, *args, **kwargs):
+        task=self.get_object()
+        if task.user != self.request.user:
+            raise Http404("You don't have permission to edit this Task")
+        return super().dispatch(request, *args, **kwargs)
 
 class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
