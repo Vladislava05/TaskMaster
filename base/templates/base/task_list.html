@@ -27,6 +27,7 @@
     <li class="ddropdownn-top">
     <a class="ddropdownn-top" href="#">Menu</a>
             <ul class="ddropdownn-inside">
+                <li><a href="{% url 'top-users' %}">Top</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 
@@ -99,7 +100,6 @@
     {% endfor %}
 </div>
 
-
-
 {% endblock content %}
+
 
