@@ -99,7 +99,13 @@
     {% endfor %}
 </div>
 
+<div>
 
+    {% for key, value in top_users.items %}
+        {{ key }}: {{ value }}
+    {% endfor %}
+
+</div>
 
 {% endblock content %}
 
