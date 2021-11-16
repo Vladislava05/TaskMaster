@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views.generic import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
@@ -47,31 +48,11 @@ class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
 
-    def get_top_users(self):
-        users = User.objects.all()
-        top_users = {}
-
-        print(type(top_users))
-
-        for user in users:
-            tasks = user.tasks.all()
-            completed_tasks = 0
-            for task in tasks:
-                if task.complete:
-                    completed_tasks += 1
-            top_users.update({user: completed_tasks})
-
-        top_users = sorted(top_users.items(), key=lambda x:x[1], reverse=True)
-        top_users = dict(top_users)
-
-        return top_users
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         context['count'] = context['tasks'].filter(complete=False).count()
         context['k'] = context['tasks'].filter(complete=True).count()
-        context['top_users'] = self.get_top_users()
 
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
@@ -112,3 +93,27 @@ class DeleteView(LoginRequiredMixin, DeleteView):
 class About(ListView):
     model= Task
     template_name = 'base/about.html'
+
+
+class TopUsersView(View):
+    def get(self, request):
+        template = 'base/top-users.html'
+        context = {'top_users': self.get_top_users()}
+        return render(request, template, context)
+
+    def get_top_users(self):
+        users = User.objects.all()
+        top_users = {}
+
+        for user in users:
+            tasks = user.tasks.all()
+            completed_tasks = 0
+            for task in tasks:
+                if task.complete:
+                    completed_tasks += 1
+            top_users.update({user: completed_tasks})
+
+        top_users = sorted(top_users.items(), key=lambda x:x[1], reverse=True)
+        top_users = dict(top_users)
+
+        return top_users

@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import TaskList, TaskDetail, TaskCreate, TaskUpdate, DeleteView, CustomLoginView, RegisterPage, About
+from .views import *
 
 from django.contrib.auth.views import LogoutView
 
@@ -17,9 +17,6 @@ urlpatterns = [
     path('task-create/', TaskCreate.as_view(), name ='task-create'),
     path('task-update/<int:pk>/', TaskUpdate.as_view(), name ='task-update'),
     path('task-delete/<int:pk>/', DeleteView.as_view(), name ='task-delete'),
-   
+    path('top-users/', TopUsersView.as_view(), name='top-users'),
     path('about/', About.as_view(), name='about'),
- 
-    
-    
-] 
+]
