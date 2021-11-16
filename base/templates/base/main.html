@@ -167,6 +167,61 @@
                 padding: 20px;
             }
 
+
+
+            
+            .social-link{
+                display: block;
+                width: 33px;
+                height: 33px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 17px auto;
+                background-color: #FFD723;
+                border-radius: 100%;
+                opacity: 0.4;
+                transition: opacity 0.3s ease-in-out;
+}
+
+
+
+            .social-link:hover{
+               opacity: 1;
+}
+
+
+            .social-content{
+              max-width: 550px;
+              margin: auto;
+}
+            .social{
+              display: flex;
+             align-items: center;
+             justify-content: flex-end;
+             background-color:floralwhite;
+    
+    
+}
+.social-link-fb{
+   background-image: url({% static 'base/images/icons8-facebook-f.svg' %});
+}
+.social-link-tw{
+    background-image:url({% static 'base/images/icons8-twitter.svg' %});
+}
+.social-link-vk{
+    background-image:url({% static 'base/images/vk-link.svg' %});
+    
+}
+.list-reset{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.social-item:not(:last-child){
+    margin-right: 11px;
+}
+
+>>>>>>> Stashed changes
 ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative;
      }
 ul.ddropdownn, ul.ddropdownn-inside {
