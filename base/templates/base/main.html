@@ -198,6 +198,7 @@
 .social-content{
     max-width: 550px;
     margin: auto;
+    padding-top: 10px;
 }
 .social{
     display: flex;
@@ -217,6 +218,10 @@
     background-image:url({% static 'base/images/vk-link.svg' %});
     
 }
+.social-link-git{
+    background-image:url({% static 'base/images/git.svg' %});
+    
+}
 .list-reset{
     margin: 0;
     padding: 0;
@@ -225,6 +230,18 @@
 .social-item:not(:last-child){
     margin-right: 11px;
 }
+
+.top-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: -70%;
+}
+
+.value{
+    color: #EB796F;
+}
+
+
 
 ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative;
      }
@@ -284,7 +301,7 @@ ul.ddropdownn .ddropdownn-inside a:hover {/* Цвет фона изменитс�
           
             <ul class="social list-reset">
                 <li class="social-item"><a href="https://www.facebook.com/groups/295736722419986" class="social-link social-link-fb" target="_blank" aria-label="Link to Facebook"></a></li>
-                
+                <li class="social-item"><a href="https://github.com/Vladislava05/TaskMaster" class="social-link social-link-git" target="_blank" aria-label="Link to Github"></a></li>
                 <li class="social-item"><a href="https://twitter.com/VlaDis005" class="social-link social-link-tw" target="_blank" aria-label="Link to Twitter"></a></li>
                 <li class="social-item"><a href="https://vk.com/public208874300" class="social-link social-link-vk" target="_blank" aria-label="Link to social-link-vk"></a></li>
                 
