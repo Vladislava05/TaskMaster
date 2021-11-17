@@ -6,18 +6,20 @@
     <div class="header-bar">
         <a href="{% url 'tasks' %}">&#8592; Back</a>
         <h1>Top of users</h1></div>
+        <div class="scrolling-wrapper">
     {% for key, value in top_users.items %}
+    
   <div class="card-body">
     
     <ul class="top-list list-reset">
         
-        <li><h3>{{ key }}</h3></li>
-        <li><div class="value"><h3>{{ value }}</h3></div></li>
+        <li class="top-item"><h3>{{ key }}</h3></li>
+        <li class="top-item"><div class="value"><h3>{{ value }}</h3></div></li>
     </ul>
     </div>
     
     {% endfor %}
-</div>
+</div></div>
 
 
 {% endblock content %}
