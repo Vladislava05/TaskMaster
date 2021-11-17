@@ -11,9 +11,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 
-import operator
-
 from .models import Task
+from .forms import TaskForm
 
 
 class CustomLoginView(LoginView):
@@ -77,7 +76,8 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['title', 'description','complete']
+    form_class = TaskForm
+    #fields = ['title', 'description','complete', 'due_date']
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):

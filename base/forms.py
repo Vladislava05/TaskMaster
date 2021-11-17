@@ -1,9 +1,8 @@
 from django import forms
 
-# Reordering Form and View
-
 from django.forms import ModelForm
-from django.forms import Textarea
+
+from .models import Task
 
 
 
@@ -11,6 +10,16 @@ from django.forms import Textarea
 class PositionForm(forms.Form):
     position = forms.CharField()
 
+class DateInput(forms.DateTimeInput):
+    input_type = 'date'
 
+
+class TaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = ['title', 'description','complete', 'due_date']
+        widgets = {
+            'due_date': DateInput,
+        }
 
 
