@@ -2,306 +2,58 @@
 
 <!DOCTYPE html>
 
-
-
-
 <html>
+
     <head>
-       
+
         <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
-    ym(86445597, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
-    });
- </script>
- <noscript><div><img src="https://mc.yandex.ru/watch/86445597" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(86445597, "init", {
+                 clickmap:true,
+                 trackLinks:true,
+                 accurateTrackBounce:true,
+                 webvisor:true
+            });
+        </script>
+        <!-- /Yandex.Metrika counter -->
+        <noscript><div><img src="https://mc.yandex.ru/watch/86445597" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+        <title>To Do Items</title>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>To Do Items</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
+        <link rel="stylesheet" href="{% static 'base/css/main.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allison&family=Inconsolata:wght@200;300&display=swap" rel="stylesheet">
-
         <link rel="shortcut icon" href="{% static 'base/favicons/favicon.png' %}"/>
 
-
-        <style>
-            body{
-                background-color:floralwhite;
-                font-family: 'Allison', cursive;
-                font-family: 'Inconsolata', monospace;
-                padding-top: 50px;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-                 {
-
-                    font-family: 'Raleway', sans-serif;
-            }
-
-            a,
-            p {
-                color:dimgray;
-            }
-            a:hover{
-                color: #0000ff ;
-            }
-
-            .container{
-                max-width: 550px;
-                margin: auto;
-                background-color:#fff;
-                -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-                box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21)
-            }
-
-            .header-bar {
-                display: flex;
-                justify-content: space-between;
-                color: #fff;
-                padding: 10px;
-                border-radius: 5px 5px 0 0;
-                background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);
-            }
-
-            .header-bar a {
-                color: rgb(247, 247, 247);
-                text-decoration: none;
-
-            }
-
-            .task-wrapper  {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 20px;
-                background-color: #fff;
-                border-top: 1px solid rgb(226, 226, 226);
-            }
-
-            .task-title {
-                display: flex;
-            }
-            .task-title a {
-                text-decoration: none;
-                color: #4b5156;
-                margin-left: 10px;
-            }
-            .task-complete-icon {
-                height: 20px;
-                width: 20px;
-                background-color: rgb(105, 192, 105);
-                border-radius: 50%;
-            }
-            .task-incomplete-icon {
-                height: 20px;
-                width: 20px;
-                background-color: rgb(218, 218, 218);
-                border-radius: 50%;
-            }
-            .delete-link {
-                text-decoration: none;
-                font-weight: 900;
-                color: #cf4949;
-                font-size: 22px;
-                line-height: 0;
-            }
-            #search-add-wrapper {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
-            }
-            #add-link{
-                
-                text-decoration: none;
-                font-size: 42px;
-                text-shadow: 1px 1px #81413b;
-            }
-
-            input[type=text],
-            input[type=password],
-            textarea {
-                border: 1px solid #EB796F;
-                border-radius: 5px;
-                padding: 10px;
-                width: 90%;
-            }
-
-            label{
-                padding-top: 10px !important;
-                display: block;
-            }
-            .button {
-                border: 1px solid #EB796F;
-                background-color: #FAFAFA;
-                color: #EB796F;
-                padding: 10 px;
-                font-size: 14px;
-                border-radius: 5px;
-                cursor: pointer;
-                text-decoration: none;
-            }
-            
-            .btn-create{
-                margin-top: 18px;
-                
-                
-            }
-
-            .button:hover {
-                color: #FAFAFA;
-	            background-color: #EB796F;
-            }
-
-            .card-body {
-                padding: 20px;
-            }
-
-.social-link{
-    display: block;
-    width: 33px;
-    height: 33px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 17px auto;
-    background-color: #FFD723;
-    border-radius: 100%;
-    opacity: 0.4;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.social-link:hover{
-    opacity: 1;
-}
-
-
-.social-content{
-    max-width: 550px;
-    margin: auto;
-    padding-top: 10px;
-}
-.social{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color:floralwhite;
-}
-.social-link-fb{
-   background-image: url({% static 'base/images/icons8-facebook-f.svg' %});
-}
-.social-link-tw{
-    background-image:url({% static 'base/images/icons8-twitter.svg' %});
-}
-.social-link-vk{
-    background-image:url({% static 'base/images/vk-link.svg' %});
-    
-}
-
-.social-link-git{
-    background-image:url({% static 'base/images/git.svg' %});
-    
-}
-
-.list-reset{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-.social-item:not(:last-child){
-    margin-right: 11px;
-}
-
-.top-list{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: -70%;
-}
-
-.value{
-    color: #EB796F;
-}
-
-ul.ddropdownn li {/* Считаем координаты относительно исходного места. */ position: relative;
-     }
-ul.ddropdownn, ul.ddropdownn-inside {
-    /* Отступы на нуле. */
-    padding: 0;
-    /* Маркеры уберем. */
-    list-style-type: none;
-    
-    }
-ul.ddropdownn-inside {
-    /* Спрячем дочерние элементы выпадающего списка. */
-    left: -9999px;
-    position: absolute;
-    display: none;
-    
-    }
-ul.ddropdownn li.ddropdownn-top {
-    /* Небольшой отступ. */
-    margin: 0 1px 0 0;
-    /* Выравнивание по левой стороне. */
-    float: left;
-    display: inline;
-    }
-ul.ddropdownn li.ddropdownn-top a {
-    /* Делаю элементы блочными. */
-    display: block;
-    /* Снова отступы. */
-    padding: 3px 10px 4px;
-    
-    }
-ul.ddropdownn a.ddropdownn-top {/* Цвет фона. */ background: #EB796F; }
-ul.ddropdownn a.ddropdownn-top:hover {/* Отступы. */ padding: 3px 10px 4px; }
-ul.ddropdownn li.ddropdownn-top:hover .ddropdownn-inside {
-    left: 0;
-    /* Делаю элементы блочными. */
-    display: block;
-    
-    }
-ul.ddropdownn .ddropdownn-inside {/* Цвет фона. */ background: #EB796F; }
-ul.ddropdownn .ddropdownn-inside a:hover {/* Цвет фона изменится при наведении. */ background: #EEA390; }
-
-
-
-           
-          
-        </style>
     </head>
+
     <body>
+
         <div class="container">
             {% block content %}
-
             {% endblock content %}
         </div>
+
         <div class="social-content">
             {% block footer %}
-          
-            <ul class="social list-reset">
-                <li class="social-item"><a href="https://www.facebook.com/groups/295736722419986" class="social-link social-link-fb" target="_blank" aria-label="Link to Facebook"></a></li>
-                <li class="social-item"><a href="https://github.com/Vladislava05/TaskMaster" class="social-link social-link-git" target="_blank" aria-label="Link to Github"></a></li>
-                <li class="social-item"><a href="https://twitter.com/VlaDis005" class="social-link social-link-tw" target="_blank" aria-label="Link to Twitter"></a></li>
-                <li class="social-item"><a href="https://vk.com/public208874300" class="social-link social-link-vk" target="_blank" aria-label="Link to social-link-vk"></a></li>
-                
-              </ul>
+                <ul class="social list-reset">
+                    <li class="social-item"><a href="https://www.facebook.com/groups/295736722419986" class="social-link social-link-fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                    <li class="social-item"><a href="https://github.com/Vladislava05/TaskMaster" class="social-link social-link-git" target="_blank" aria-label="Link to Github"></a></li>
+                    <li class="social-item"><a href="https://twitter.com/VlaDis005" class="social-link social-link-tw" target="_blank" aria-label="Link to Twitter"></a></li>
+                    <li class="social-item"><a href="https://vk.com/public208874300" class="social-link social-link-vk" target="_blank" aria-label="Link to social-link-vk"></a></li>
+                </ul>
             {% endblock footer %}
         </div>
+
     </body>
+
 </html>
