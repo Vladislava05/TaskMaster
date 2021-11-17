@@ -1,105 +1,67 @@
 {% extends 'base/main.html' %}
+
 {% block content %}
 
-
-<div class="header-bar">
-    <div>
-        <script language="javascript" type="text/javascript">
-            var d = new Date();
-            
-            var day=new Array("Sunday","Monday","Tuesday",
-            "Wednesday","Thursday","Friday","Saturday");
-            
-            var month=new Array("January","February","March","April","May","June",
-            "July","August","September","October","November","December");
-            
-            document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
-            + " " + d.getFullYear());
-        </script>
-        <h1>Hello, {{request.user|title}}</h1>
-        <h3 style="margin:0">You have <i style="color:yellow">{{count}}</i> incomplete and <i style="color:yellow">{{k}}</i> complete tasks</h3>
-        
-    </div>
-    {% if request.user.is_authenticated %}
-
-<ul class="ddropdownn">
-        
-    <li class="ddropdownn-top">
-    <a class="ddropdownn-top" href="#">Menu</a>
-            <ul class="ddropdownn-inside">
-                <li><a href="{% url 'top-users' %}">Top</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                
-                <li><a href="https://forms.yandex.ru/cloud/6170f0b40208c60589a01c66/">Support</a></li>
-                
-                
-            </ul>
-        </li>
-</ul>
-            
-            
-        
-    
-    
-  
-   
-    
-    
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    
-    {% endif %}
-
-</div>
-
-<div id="search-add-wrapper">
-    <form method="GET" style="margin-top: 20px;display: flex;">
-        <input type='text' name='search-area' value="{{search_input}}">
-        <input class="button" type="submit" value='Search'>
-    </form>
-    <a class="button btn-create" id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
-</div>
-
-
-
-<div class="task-items-wrapper">
-
-    {% for task in tasks %}
-    
-        
-    
-      <div class="task-wrapper" >
-        {% if task.complete %}
-                
-                <div class="task-title">
-                    <div class="task-complete-icon"></div>
-                    
-                    <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i>
-                   
-
-                </div>
-                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-            
-        {% else %}
-          <div class="task-title">
-            <div class="task-incomplete-icon"></div>
-            <a href="{% url 'task-update' task.id %}">{{task}}</a>
+    <div class="header-bar">
+        <div>
+            <script language="javascript" type="text/javascript">
+                var d = new Date();
+                var day=new Array("Sunday","Monday","Tuesday",
+                "Wednesday","Thursday","Friday","Saturday");
+                var month=new Array("January","February","March","April","May","June",
+                "July","August","September","October","November","December");
+                document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
+                + " " + d.getFullYear());
+            </script>
+            <h1>Hello, {{request.user|title}}</h1>
+            <h3 style="margin:0">You have <i style="color:yellow">{{count}}</i> incomplete and <i style="color:yellow">{{k}}</i> complete tasks</h3>
         </div>
-        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-        
-              
+
+        {% if request.user.is_authenticated %}
+            <ul class="ddropdownn">
+                <li class="ddropdownn-top">
+                    <a class="ddropdownn-top" href="#">Menu</a>
+                    <ul class="ddropdownn-inside">
+                        <li><a href="{% url 'top-users' %}">Top</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="https://forms.yandex.ru/cloud/6170f0b40208c60589a01c66/">Support</a></li>
+                    </ul>
+                </li>
+            </ul>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
         {% endif %}
+    </div>
 
-          
-               
+    <div id="search-add-wrapper">
+        <form method="GET" style="margin-top: 20px;display: flex;">
+            <input type='text' name='search-area' value="{{search_input}}">
+            <input class="button" type="submit" value='Search'>
+        </form>
+        <a class="button btn-create" id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+    </div>
 
-      </div>
-    {% empty %}
-    <h3>No items in list</h3>
-    {% endfor %}
-</div>
+    <div class="task-items-wrapper">
+        {% for task in tasks %}
+            <div class="task-wrapper" >
+                {% if task.complete %}
+                    <div class="task-title">
+                        <div class="task-complete-icon"></div>
+                        <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i>
+                    </div>
+                    <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+                {% else %}
+                    <div class="task-title">
+                        <div class="task-incomplete-icon"></div>
+                        <a href="{% url 'task-update' task.id %}">{{task}}</a>
+                    </div>
+                    <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+                {% endif %}
+            </div>
+            {% empty %}
+            <h3>No items in list</h3>
+        {% endfor %}
+    </div>
 
 {% endblock content %}
-
-
