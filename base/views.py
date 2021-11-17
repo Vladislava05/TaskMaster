@@ -1,3 +1,5 @@
+import operator
+
 from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -10,8 +12,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login
-
-import operator
 
 from .models import Task
 
