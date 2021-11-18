@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login
 
 from .models import Task
-
+from .forms import TaskForm
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -77,7 +77,7 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['title', 'description','complete']
+    form_class = TaskForm
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):
@@ -87,7 +87,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description', 'complete']
+    form_class = TaskForm
     success_url = reverse_lazy('tasks')
 
     def dispatch(self, request, *args, **kwargs):
