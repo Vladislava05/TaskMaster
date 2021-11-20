@@ -88,7 +88,7 @@ a:hover{
     text-shadow: 1px 1px #81413b;
 }
 
-input[type=text], input[type=password], textarea {
+input[type=text], input[type=password], input[type=date], textarea {
     border: 1px solid #EB796F;
     border-radius: 5px;
     padding: 10px;
@@ -181,13 +181,20 @@ label {
 }
 
 .top-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: -70%;
+    display: flex;
+    justify-content: space-between;
+   
 }
 
 .value {
     color: #EB796F;
+}
+
+.for-top{
+    display: flex;
+    justify-content: space-between;
+    color:darkgrey;
+    border-bottom: 1px solid darkgrey;
 }
 
 ul.ddropdownn li {

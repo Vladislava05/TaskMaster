@@ -38,6 +38,7 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).form_valid(form)
         if User.objects.filter(username = request.POST['username']).exists():
               print('Already taken')
+        
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:

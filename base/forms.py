@@ -12,7 +12,7 @@ class DateInput(forms.DateTimeInput):
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description', 'complete', 'due_date']
+        fields = ['title', 'description', 'due_date', 'complete']
         widgets = {
             'due_date': DateInput,
         }

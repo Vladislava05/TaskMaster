@@ -7,13 +7,23 @@
         <a href="{% url 'tasks' %}">&#8592; Back</a>
         <h1>Top of users</h1>
     </div>
-
+    
+    <div class="for-top card-body">
+        <h3>Username</h3>
+        <h3>Completed</h3>
+        
+    </div>
     {% for key, value in top_users.items %}
         <div class="card-body">
-            <ul class="top-list list-reset">
-            <li><h3>{{ key }}</h3></li>
-            <li><div class="value"><h3>{{ value }}</h3></div></li>
-            </ul>
+           
+            
+
+            <div class="top-list">
+              <h4>{{ key }}</h4></li>
+            
+              <div class="value"><h4>{{ value }}</h4></div>
+            
+            </div>
         </div>
     {% endfor %}
 </div>
