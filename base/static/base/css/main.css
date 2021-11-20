@@ -154,20 +154,20 @@ label {
 }
 
 .social-link-fb {
-    background-image: url({% static 'base/images/icons8-facebook-f.svg' %});
+    background-image: url('../images/icons8-facebook-f.svg');
 }
 
 .social-link-tw {
-    background-image:url({% static 'base/images/icons8-twitter.svg' %});
+    background-image:url('../images/icons8-twitter.svg');
 }
 
 .social-link-vk {
-    background-image:url({% static 'base/images/vk-link.svg' %});
+    background-image:url('../images/vk-link.svg');
 
 }
 
 .social-link-git {
-    background-image:url({% static 'base/images/git.svg' %});
+    background-image:url('../images/git.svg');
 }
 
 .list-reset {
