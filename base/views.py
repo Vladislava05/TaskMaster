@@ -58,10 +58,14 @@ class TaskList(LoginRequiredMixin, ListView):
 
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
-            context['tasks'] = context['tasks'].filter(title__startswith=search_input)
+            context['tasks'] = context['tasks'].filter(title__icontains=search_input)
         context['search_input'] = search_input
 
         return context
+
+        
+
+        
 
 
 class TaskDetail(LoginRequiredMixin, DetailView):
@@ -84,6 +88,8 @@ class TaskCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(TaskCreate, self).form_valid(form)
+
+    
 
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
