@@ -13,15 +13,15 @@
         <h3>Completed</h3>
         
     </div>
-    {% for key, value in top_users.items %}
+    {% for user in top_users %}
         <div class="card-body">
            
             
 
             <div class="top-list">
-              <h4>{{ key }}</h4></li>
+              <h4>{{ user.username }}</h4></li>
             
-              <div class="value"><h4>{{ value }}</h4></div>
+              <div class="value"><h4>{{ user.task_completed }}</h4></div>
             
             </div>
         </div>
