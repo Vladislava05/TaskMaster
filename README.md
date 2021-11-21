@@ -7,7 +7,7 @@ I would be more than happy if you could help me with this project!
 
 Link to our web-app: https://todo-vladislava.herokuapp.com/
 
-<img src="preview.jpg">
+![DEMO](../main/preview.jpg)
 
 Join us!
 
