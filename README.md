@@ -7,6 +7,8 @@ I would be more than happy if you could help me with this project!
 
 Link to our web-app: https://todo-vladislava.herokuapp.com/
 
+<img src="preview.jpg">
+
 Join us!
 
 Our Facebook: https://www.facebook.com/groups/295736722419986
