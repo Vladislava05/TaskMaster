@@ -7,7 +7,7 @@ I would be more than happy if you could help me with this project!
 
 Link to our web-app: https://todo-vladislava.herokuapp.com/
 
-![Image alt](https://github.com/Vladislava05/TaskMaster/raw/main/todo/preview.jpg)
+![Image alt](https://github.com/Vladislava05/TaskMaster/main/todo/preview.jpg)
 
 
 Join us!
