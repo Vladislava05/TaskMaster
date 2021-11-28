@@ -1,5 +1,5 @@
 body {
-    background-color:rgba(20, 18, 44, 0.959);
+    background-color:rgba(40, 36, 83, 0.959);
     font-family: 'Allison', cursive;
     font-family: 'Inconsolata', monospace;
     padding-top: 50px;
@@ -258,4 +258,10 @@ ul.ddropdownn .ddropdownn-inside {
 ul.ddropdownn .ddropdownn-inside a:hover {
     /* Цвет фона изменится при наведении. */
     background: #90b8dd;
+}
+
+
+.btn{
+    border-radius: 4px;
+    
 }
