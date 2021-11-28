@@ -1,5 +1,5 @@
 body {
-    background-color:floralwhite  ;
+    background-color:floralwhite;
     font-family: 'Allison', cursive;
     font-family: 'Inconsolata', monospace;
     padding-top: 50px;
@@ -145,6 +145,7 @@ label {
     max-width: 550px;
     margin: auto;
     padding-top: 10px;
+    
 }
 .social {
     display: flex;
@@ -231,7 +232,7 @@ ul.ddropdownn li.ddropdownn-top a {
 
 ul.ddropdownn a.ddropdownn-top {
     /* Цвет фона. */
-    background: #EB796F;
+    background: #eb8f87;
 }
 
 ul.ddropdownn a.ddropdownn-top:hover {
@@ -255,4 +256,9 @@ ul.ddropdownn .ddropdownn-inside a:hover {
     background: #EEA390;
 }
 
+
+.btn{
+    border-radius: 4px;
+    
+}
 
