@@ -41,6 +41,20 @@ Our Twitter: https://twitter.com/VlaDis005
     foo@bar: TaskMaster $ python3 manage.py runserver
     ```
 
+## Installation with Docker
+
+1. Build and up docker containers:
+
+    ```console
+    foo@bar: TaskMaster $ docker-compose up -d --build
+    ```
+
+2. Run migrations:
+
+    ```console
+    foo@bar: TaskMaster $ docker-compose exec web python manage.py migrate
+    ```
+
 ## Installation to [Heroku](https://www.heroku.com/)
 
 1. Create the Heroku app:

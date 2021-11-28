@@ -20,7 +20,7 @@ class Task(models.Model):
     class Meta:
         ordering=['due_date']
         
-      
-        
+
+
         
        
