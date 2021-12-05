@@ -5,7 +5,7 @@ This TaskMaster was created in order to help you keep your busy life in order!
 Technology used: Python 3.9, Django 3, CSS, HTML
 I would be more than happy if you could help me with this project!
 
-Link to our web-app: 
+Link to our web-app: https://todo-vladislava.herokuapp.com/
 
 Join us!
 
