@@ -21,6 +21,7 @@ Join us!
 
 * [Installation](#installation)
 * [Installation to Heroku](#installation-to-heroku)
+* [Contributing](#contributing)
 * [Contacts](#contacts)
 * [License](#license)
 
@@ -77,6 +78,8 @@ Join us!
     ```console
     foo@bar: TaskMaster $ heroku run python manage.py migrate
     ```
+## Contributing ##
+If you want to contribute to our project, check **Contributing.md**
 
 ## Contacts
 
