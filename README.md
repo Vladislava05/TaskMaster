@@ -1,4 +1,5 @@
 # TaskMaster
+![GitHub forks](https://img.shields.io/github/forks/Vladislava05/TaskMaster?style=social)
 
 Hey everyone!😊
 This TaskMaster was created in order to help you keep your busy life in order! 
