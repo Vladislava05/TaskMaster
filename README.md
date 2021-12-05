@@ -7,6 +7,7 @@ I would be more than happy if you could help me with this project!
 
 Link to our web-app: https://todo-vladislava.herokuapp.com/
 
+![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
 Join us!
 
 Our Facebook: https://www.facebook.com/groups/295736722419986
