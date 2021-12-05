@@ -4,7 +4,7 @@
 
 
 Hey everyone!😊<br>
-This TaskMaster was created in order to help you keep your busy life in order! 
+This **TaskMaster** was created in order to help you keep your busy life in order! 
 Technology used: Python 3.9, Django 3, CSS, HTML
 I would be more than happy if you could help me with this project!
 
