@@ -89,6 +89,7 @@ a:hover{
 }
 
 input[type=text], input[type=password], input[type=date], textarea {
+    background-color: #fff;
     border: 1px solid #EB796F;
     border-radius: 5px;
     padding: 10px;
