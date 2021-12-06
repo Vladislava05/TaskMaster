@@ -1,7 +1,7 @@
 import operator
 
 from django.http.response import Http404
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import View
 from django.views.generic.list import ListView
@@ -13,7 +13,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 
-from .models import Task
+from .models import Task, UserProfile
 from .forms import TaskForm
 
 class CustomLoginView(LoginView):
@@ -137,3 +137,25 @@ class TopUsersView(View):
         top_users = dict(top_users)
 
         return top_users
+
+
+class UserProfileDetailView(DetailView):
+    model = User
+    context_object_name = "user"
+    template_name = "base/profile_detail.html"
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(self.model, username=self.kwargs['username'])
+
+
+class UserProfileEditView(LoginRequiredMixin, UpdateView):
+    model = UserProfile
+    fields = ["first_name", "last_name", "profile_picture", "bio"]
+    template_name = "base/profile_edit.html"
+
+    def get_object(self, queryset=None):
+        return self.model.objects.get(user__username=self.request.user)
+
+    def get_success_url(self):
+        return reverse_lazy("profile-detail", kwargs={'username':self.object.user.username})
+        
