@@ -7,10 +7,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
+    color:rgb(247, 239, 239);
 }
 
 a, p {
-    color: rgb(247, 239, 239);
+    color: rgba(247, 239, 239, 0.493);
 }
 
 a:hover{
