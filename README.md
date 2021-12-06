@@ -1,23 +1,27 @@
 # TaskMaster
+![GitHub forks](https://img.shields.io/github/forks/Vladislava05/TaskMaster?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/Vladislava05/TaskMaster?style=social)
 
-Hey everyone!😊
-This TaskMaster was created in order to help you keep your busy life in order! 
+
+Hey everyone!😊<br>
+This **TaskMaster** was created in order to help you keep your busy life in order! 
 Technology used: Python 3.9, Django 3, CSS, HTML
 I would be more than happy if you could help me with this project!
 
-Link to our web-app: https://todo-vladislava.herokuapp.com/
+**Link to our web-app**: https://todo-vladislava.herokuapp.com/
 
-
+![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
 Join us!
 
-Our Facebook: https://www.facebook.com/groups/295736722419986
+**Our Facebook**: https://www.facebook.com/groups/295736722419986
 
-Our Twitter: https://twitter.com/VlaDis005
+**Our Twitter**: https://twitter.com/VlaDis005
 
 ## Contents
 
 * [Installation](#installation)
 * [Installation to Heroku](#installation-to-heroku)
+* [Contributing](#contributing)
 * [Contacts](#contacts)
 * [License](#license)
 
@@ -74,6 +78,8 @@ Our Twitter: https://twitter.com/VlaDis005
     ```console
     foo@bar: TaskMaster $ heroku run python manage.py migrate
     ```
+## Contributing ##
+If you want to contribute to our project, check **Contributing.md**
 
 ## Contacts
 
