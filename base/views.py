@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login
+from django.db.models import Count, Q
 
 from .models import Task
 from .forms import TaskForm
@@ -122,18 +123,6 @@ class TopUsersView(View):
         return render(request, template, context)
 
     def get_top_users(self):
-        users = User.objects.all()
-        top_users = {}
-
-        for user in users:
-            tasks = user.tasks.all()
-            completed_tasks = 0
-            for task in tasks:
-                if task.complete:
-                    completed_tasks += 1
-            top_users.update({user: completed_tasks})
-
-        top_users = sorted(top_users.items(), key=lambda x:x[1], reverse=True)
-        top_users = dict(top_users)
-
+        top_users = User.objects.annotate(task_completed=Count(
+            'tasks', filter=Q(tasks__complete=True))).order_by('-task_completed')
         return top_users
