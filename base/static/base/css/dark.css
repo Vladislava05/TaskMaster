@@ -63,12 +63,14 @@ a:hover{
     width: 20px;
     background-color: rgb(45, 99, 45);
     border-radius: 50%;
+    flex-shrink: 0;
 }
 .task-incomplete-icon {
     height: 20px;
     width: 20px;
     background-color: rgb(243, 240, 240);
     border-radius: 50%;
+    flex-shrink: 0;
 }
 .delete-link {
     text-decoration: none;
@@ -265,4 +267,14 @@ ul.ddropdownn .ddropdownn-inside a:hover {
 .btn{
     border-radius: 4px;
     
+}
+
+.btn-light{
+    background-color:rgb(253, 253, 253);
+    
+}
+
+.btn-dark{
+    color: white;
+    background-color:rgba(0, 0, 0, 0.692);
 }
