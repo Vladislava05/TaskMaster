@@ -28,7 +28,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link id="mystylesheet" rel="stylesheet" href="{% static 'base/css/main.css' %}">
+        <link id="mystylesheet" rel="stylesheet" type="text/css" href="{% static 'base/css/main.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allison&family=Inconsolata:wght@200;300&display=swap" rel="stylesheet">
@@ -55,6 +55,7 @@
 
 
     </script>
+ 
 
 
 
@@ -73,10 +74,12 @@
                     <li class="social-item"><a href="https://twitter.com/VlaDis005" class="social-link social-link-tw" target="_blank" aria-label="Link to Twitter"></a></li>
                     <li class="social-item"><a href="https://vk.com/public208874300" class="social-link social-link-vk" target="_blank" aria-label="Link to social-link-vk"></a></li>
                 </ul>
-                
+                <div id="slider">
+                    <div id="runner"></div>
                 <button class="btn btn-light" onclick="swapStyle('{% static 'base/css/main.css' %}')">Light</button>
                 <button class="btn btn-dark" onclick="swapStyle('{% static 'base/css/dark.css' %}')">Dark</button>
-                
+                </div>
+                <div id="res"></div>
             {% endblock footer %}
         </div>
        
