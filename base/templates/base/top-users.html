@@ -1,31 +1,34 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-
-<div class="container">
-    <div class="header-bar">
-        <a href="{% url 'tasks' %}">&#8592; Back</a>
-        <h1>Top of users</h1>
-    </div>
+    {% if request.user.is_authenticated %}
+    <div class="container">
+        <div class="header-bar">
+            <a href="{% url 'tasks' %}">&#8592; Back</a>
+            <h1>Top of users</h1>
+        </div>
     
-    <div class="for-top card-body">
-        <h3>Username</h3>
-        <h3>Complete</h3>
+        <div class="for-top card-body">
+            <h3>Username</h3>
+            <h3>Complete</h3>
         
-    </div>
-    {% for user in top_users %}
-        <div class="card-body">
+        </div>
+        {% for user in top_users %}
+            <div class="card-body">
            
             
 
-            <div class="top-list">
-              <h4>{{ user.username }}</h4></li>
+                <div class="top-list">
+                  <h4>{{ user.username }}</h4></li>
             
-              <div class="value"><h4>{{ user.task_completed }}</h4></div>
+                  <div class="value"><h4>{{ user.task_completed }}</h4></div>
             
+                </div>
             </div>
-        </div>
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
 
 {% endblock content %}
