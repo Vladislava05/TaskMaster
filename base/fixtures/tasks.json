@@ -1,0 +1,26 @@
+[
+    {
+        "model": "base.task",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "Test Task #001",
+            "description": "This's just test.",
+            "complete": false,
+            "created": "2021-12-12T06:55:59.973Z",
+            "due_date": "2022-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "base.task",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "title": "Test Task #002",
+            "description": "This's just test.",
+            "complete": true,
+            "created": "2021-12-12T06:56:20.466Z",
+            "due_date": "2022-01-01T00:00:00Z"
+        }
+    }
+]
