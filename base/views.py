@@ -9,12 +9,13 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
 
 from .models import Task
-from .forms import TaskForm
+from .forms import EditProfileForm, SignUpForm, TaskForm
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -27,7 +28,7 @@ class CustomLoginView(LoginView):
 
 class RegisterPage(FormView):
     template_name = 'base/register.html'
-    form_class = UserCreationForm
+    form_class = SignUpForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
 
@@ -36,6 +37,7 @@ class RegisterPage(FormView):
         if user is not None:
             login(self.request, user)
         return super(RegisterPage, self).form_valid(form)
+       
         if User.objects.filter(username = request.POST['username']).exists():
               print('Already taken')
 
@@ -130,3 +132,16 @@ class TopUsersView(View):
         top_users = dict(top_users)
 
         return top_users
+
+
+class UserEditView(UpdateView):
+    form_class = EditProfileForm
+    template_name = 'base/edit_profile.html'
+    success_url = reverse_lazy('tasks')
+
+    def get_object(self):
+        return self.request.user
+
+class PasswordChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('login')
