@@ -13,7 +13,7 @@
                 document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
                 + " " + d.getFullYear());
             </script>
-            <h1>Hello, {{request.user|title}}</h1>
+            <h1>Hello, <a href="{% url 'edit_profile' %}">{{request.user|title}}</a></h1>
             <h3 style="margin:0">You have <i style="color:yellow">{{count}}</i> incomplete and <i style="color:yellow">{{k}}</i> complete tasks</h3>
         </div>
 

@@ -13,6 +13,7 @@ from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm, User
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
+from django.db.models import Count, Q
 
 from .models import Task
 from .forms import EditProfileForm, SignUpForm, TaskForm
