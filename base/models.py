@@ -24,3 +24,9 @@ class Task(models.Model):
     class Meta:
         ordering=['due_date']
 
+class Profile(models.Model):
+    user=models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio=models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return str(self.user)

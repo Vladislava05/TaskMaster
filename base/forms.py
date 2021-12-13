@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
+from django.db.models.fields import TextField
 from django.forms import ModelForm, Textarea
 
 from .models import Task
@@ -39,5 +40,5 @@ class EditProfileForm(UserChangeForm):
         model = User
         fields=['username', 'first_name', 'last_name', 'bio', 'email']
         widgets = {
-            'bio': forms.Textarea,
+            'bio': TextField(null=True, blank=True)
         }
