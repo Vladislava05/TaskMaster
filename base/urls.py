@@ -1,4 +1,6 @@
 from django.urls import path
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
 
 from .views import *
@@ -14,6 +16,8 @@ urlpatterns = [
     path('task-delete/<int:pk>/', DeleteView.as_view(), name ='task-delete'),
     path('top-users/', TopUsersView.as_view(), name='top-users'),
     path('about/', About.as_view(), name='about'),
-    path('<str:username>', UserProfileDetailView.as_view(), name="profile-detail"),
-    path('edit/', UserProfileEditView.as_view(), name="profile-edit"),
+     #path('password/', auth_views.PasswordChangeView.as_view(template_name='base/change-password.html')),
+    path('password/', auth_views.PasswordChangeView.as_view(template_name='base/change-password.html')),
+    path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
+    
 ]
