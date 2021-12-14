@@ -269,12 +269,14 @@ ul.ddropdownn .ddropdownn-inside a:hover {
     border:none;
 }
 
-.btn-light{
-    background-color:rgb(219, 217, 217);
+.btn-dark{
+    background-color:inherit;
+    border:none;
+    color:white;
     
 }
 
-.btn-dark{
-    color: white;
-    background-color:rgb(104, 104, 104);
+.btn-light{
+    color: black;
+    background-color:floralwhite;
 }

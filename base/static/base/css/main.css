@@ -271,5 +271,6 @@ ul.ddropdownn .ddropdownn-inside a:hover {
 }
 
 .btn-dark{
-    background-color:rgb(219, 217, 217);
+    background-color:floralwhite;
+    border: none;
 }

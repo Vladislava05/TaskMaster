@@ -1,7 +1,7 @@
 import operator
 
 from django.http.response import Http404
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import View
 from django.views.generic.list import ListView
@@ -15,7 +15,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
 from django.db.models import Count, Q
 
-from .models import Task
+from .models import Task, Profile
 from .forms import EditProfileForm, SignUpForm, TaskForm
 
 
@@ -136,3 +136,14 @@ class UserEditView(UpdateView):
 class PasswordChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
+
+class ShowProfilePageView(DetailView):
+    model = Profile
+    template_name = 'base/user_profile.html'
+
+    def get_context_data(self, *args, **kwargs):
+        users = Profile.objects.all()
+        context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
+        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+        context['page_user'] = page_user
+        return context

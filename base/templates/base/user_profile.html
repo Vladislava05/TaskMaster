@@ -1,0 +1,20 @@
+
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="header-bar">
+        <h1>Profile</h1>
+        
+        <a href="{% url 'tasks' %}">&#8592; Back</a>
+        
+    </div>
+    
+    <div class="card-body">
+      Username: {{ page_user }}<br><br>
+      <img src="{% static 'images/profile/user.png' %}"><br><br>
+      Facebook: {{ profile.facebook }}
+        
+    </div>
+
+{% endblock content %}
