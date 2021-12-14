@@ -262,7 +262,7 @@ ul.ddropdownn .ddropdownn-inside a:hover {
 
 .btn{
     border-radius: 4px;
-    
+    border:none;
 }
 
 .btn-light{
@@ -271,5 +271,5 @@ ul.ddropdownn .ddropdownn-inside a:hover {
 }
 
 .btn-dark{
-    background-color:rgb(253, 253, 253);
+    background-color:rgb(219, 217, 217);
 }

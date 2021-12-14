@@ -9,13 +9,15 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
 from django.db.models import Count, Q
 
 from .models import Task
-from .forms import TaskForm
+from .forms import EditProfileForm, SignUpForm, TaskForm
+
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -28,7 +30,7 @@ class CustomLoginView(LoginView):
 
 class RegisterPage(FormView):
     template_name = 'base/register.html'
-    form_class = UserCreationForm
+    form_class = SignUpForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
 
@@ -39,7 +41,7 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).form_valid(form)
         if User.objects.filter(username = request.POST['username']).exists():
               print('Already taken')
-        
+
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -64,10 +66,6 @@ class TaskList(LoginRequiredMixin, ListView):
 
         return context
 
-        
-
-        
-
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
@@ -89,8 +87,6 @@ class TaskCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(TaskCreate, self).form_valid(form)
-
-    
 
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
@@ -126,3 +122,17 @@ class TopUsersView(View):
         top_users = User.objects.annotate(task_completed=Count(
             'tasks', filter=Q(tasks__complete=True))).order_by('-task_completed')
         return top_users
+
+
+
+class UserEditView(UpdateView):
+    form_class = EditProfileForm
+    template_name = 'base/edit_profile.html'
+    success_url = reverse_lazy('tasks')
+
+    def get_object(self):
+        return self.request.user
+
+class PasswordChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('login')

@@ -108,6 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# maximum image upload size setting
+MAX_IMAGE_SIZE = 2097152
+
 # Internationalization
 
 LANGUAGE_CODE = 'en-us'
@@ -134,3 +137,6 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
