@@ -35,10 +35,8 @@ class EditProfileForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput)
     first_name=forms.CharField(max_length=40)
     last_name=forms.CharField(max_length=40)
-    bio = forms.CharField(max_length=250)
+    
     class Meta:
         model = User
-        fields=['username', 'first_name', 'last_name', 'bio', 'email']
-        widgets = {
-            'bio': TextField(null=True, blank=True)
-        }
+        fields=['username', 'first_name', 'last_name',  'email']
+        
