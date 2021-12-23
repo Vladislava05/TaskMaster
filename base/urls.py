@@ -20,4 +20,6 @@ urlpatterns = [
     path('password/', auth_views.PasswordChangeView.as_view(template_name='base/change-password.html')),
     path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
     path('user_profile/<int:pk>/', ShowProfilePageView.as_view(), name='user_profile'),
+    path('notion/', NotionList.as_view(), name ='notions'),
+    path('notion/<int:pk>/', NotionDetail.as_view(), name ='notion_detail'),
 ]

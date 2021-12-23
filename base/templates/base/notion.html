@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+    <div class="container">
+        <div class="header-bar">
+            <a href="{% url 'tasks' %}">&#8592; Back</a>
+            <h1>Your notes</h1>
+        </div>
+        <div id="search-add-wrapper">
+            <form method="GET" style="margin-top: 20px;display: flex;">
+                <input type='text' name='search-area' value="{{search_input}}">
+                <input class="button" type="submit" value='Search'>
+            </form>
+            <a class="button btn-create" id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+        </div>
+        
+        {% for notion in notions %}
+            <div class="card-body">
+           
+            
+
+                <div class="task-title">
+                  <h4><a href="{% url 'notion_detail' notion.pk %} ">{{ notion.title}}</a></h4>
+            
+                  
+            
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
+{% endblock content %}
