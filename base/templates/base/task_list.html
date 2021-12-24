@@ -56,7 +56,7 @@
                 {% else %}
                     <div class="task-title">
                         <div class="task-incomplete-icon"></div>
-                        <a href="{% url 'task-update' task.id %}">{{task}} {{task.due_date}}</a>
+                        <a href="{% url 'task-update' task.id %}">{{task}}|{{task.due_date}}</a>
                     </div>
                     <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
                 {% endif %}
