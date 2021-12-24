@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.forms.fields import ImageField
 from django.utils import timezone
-from ckeditor.fields import RichTextField
+
 
 from django.dispatch import receiver
 
@@ -42,7 +42,7 @@ class Notion(models.Model):
         User, on_delete=models.CASCADE, related_name='notions', null=True, blank=True)
 
     title = models.CharField(max_length=100)
-    body = RichTextField()
+    body = models.TextField()
     
 
     def __str__(self):
