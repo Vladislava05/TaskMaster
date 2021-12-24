@@ -22,4 +22,8 @@ urlpatterns = [
     path('user_profile/<int:pk>/', ShowProfilePageView.as_view(), name='user_profile'),
     path('notion/', NotionList.as_view(), name ='notions'),
     path('notion/<int:pk>/', NotionDetail.as_view(), name ='notion_detail'),
+    path('notion-create/', NotionCreate.as_view(), name ='notion-create'),
+    path('notion/update/<int:pk>/', NotionUpdate.as_view(), name ='notion-update'),
+    path('notion/<int:pk>/', NotionDetail.as_view(), name ='notion'),
+    path('notion/<int:pk>/delete', DeleteNotiontView.as_view(), name ='notion-delete'),
 ]

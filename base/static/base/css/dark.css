@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a, p {
     color: rgba(247, 239, 239, 0.493);
+    text-decoration: none;
 }
 
 a:hover{
@@ -279,4 +280,19 @@ ul.ddropdownn .ddropdownn-inside a:hover {
 .btn-light{
     color: black;
     background-color:floralwhite;
+}
+
+.edit_note{
+    color:rgb(151, 133, 231);
+    text-decoration: none;
+    padding-left:15px;
+}
+.delete_note{
+    color:rgb(240, 120, 107);
+    text-decoration:none;
+    padding-left:15px;
+}
+.note_title{
+    color: white;
+    
 }
