@@ -24,6 +24,7 @@
                     <ul class="ddropdownn-inside">
                         <li><a href="{% url 'top-users' %}">Top</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
+                       
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                         <li><a href="https://forms.yandex.ru/cloud/6170f0b40208c60589a01c66/">Support</a></li>
                     </ul>
@@ -55,7 +56,7 @@
                 {% else %}
                     <div class="task-title">
                         <div class="task-incomplete-icon"></div>
-                        <a href="{% url 'task-update' task.id %}">{{task}} {{task.due_date}}</a>
+                        <a href="{% url 'task-update' task.id %}">{{task}}|{{task.due_date}}</a>
                     </div>
                     <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
                 {% endif %}

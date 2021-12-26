@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+ 
+{% block content %}
+<div class="container">
+    {% if request.user.is_authenticated %}
+        <div class="header-bar">
+            <a href="{% url 'notions' %}">&#8592; Back</a>
+        </div>
+    
+        <div class="card-body">
+            <form method="POST" action="">
+               
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</div>
+{% endblock content %}

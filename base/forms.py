@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.fields import TextField
 from django.forms import ModelForm, Textarea
 
-from .models import Task
+from .models import Task, Notion
 
 class PositionForm(forms.Form):
     position = forms.CharField()
@@ -20,6 +20,11 @@ class TaskForm(ModelForm):
             'due_date': DateInput,
         }
 
+class NotionForm(ModelForm):
+    class Meta:
+        model = Notion
+        fields = ['title', 'body']
+       
 
 
 class SignUpForm(UserCreationForm):

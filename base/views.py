@@ -15,8 +15,8 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
 from django.db.models import Count, Q
 
-from .models import Task, Profile
-from .forms import EditProfileForm, SignUpForm, TaskForm
+from .models import Task, Profile, Notion
+from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm
 
 
 class CustomLoginView(LoginView):
@@ -147,3 +147,42 @@ class ShowProfilePageView(DetailView):
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
         context['page_user'] = page_user
         return context
+
+
+class NotionList(ListView):
+    model = Notion
+    context_object_name = 'notions'
+    template_name = 'base/notion.html'
+      
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['notions'] = context['notions'].filter(user=self.request.user)
+      
+
+        search_input = self.request.GET.get('search-area') or ''
+        if search_input:
+            context['notions'] = context['notions'].filter(title__icontains=search_input)
+        context['search_input'] = search_input
+
+        return context
+
+class NotionDetail(DetailView):
+    model = Notion
+    context_object_name = 'notion'
+    
+    template_name = 'base/notion_detail.html'
+
+class NotionCreate(LoginRequiredMixin, CreateView):
+    model = Notion
+    form_class = NotionForm
+    success_url = reverse_lazy('notions')
+
+class NotionUpdate(LoginRequiredMixin, UpdateView):
+    model = Notion
+    template_name = 'base/notion_update.html'
+    fields = ['title', 'body']
+
+class DeleteNotiontView(DeleteView, LoginRequiredMixin):
+     model = Notion
+     template_name = 'base/notion_confirm_delete.html'
+     success_url = reverse_lazy('notions')
