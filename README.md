@@ -1,6 +1,10 @@
 # TaskMaster
-![GitHub forks](https://img.shields.io/github/forks/Vladislava05/TaskMaster?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/Vladislava05/TaskMaster?style=social)
+[![GitHub forks](https://badgen.net/github/forks/Naereen/Strapdown.js/)](https://GitHub.com/Naereen/StrapDown.js/network/)
+[![GitHub stars](https://badgen.net/github/stars/Naereen/Strapdown.js)](https://GitHub.com/Naereen/StrapDown.js/stargazers/)
+![Github issues](https://img.shields.io/github/issues/Vladislava05/TaskMaster.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+<br><br><br>
 ![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
 
 ## Overview
