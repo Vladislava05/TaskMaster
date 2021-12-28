@@ -24,7 +24,12 @@
                     <ul class="ddropdownn-inside">
                         <li><a href="{% url 'top-users' %}">Top</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
-                       
+                        <li><a href="{% url 'edit_profile' %}">Settings</a></li>
+                        {% if user.profile.id %}
+                        <li><a href="{% url 'user_profile' user.profile.id %}">Profile</a></li>
+                        {% else %}
+                        <li><a href="{% url 'create_user_profile'  %}">Profile</a></li>
+                        {% endif %}
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                         <li><a href="https://forms.yandex.ru/cloud/6170f0b40208c60589a01c66/">Support</a></li>
                     </ul>
