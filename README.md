@@ -84,7 +84,7 @@ This **TaskMaster** is an open source project created in order to help you keep 
     foo@bar: TaskMaster $ heroku run python manage.py migrate
     ```
 ## Contributing ##
-If you want to contribute to our project, check **Contributing.md**
+If you want to contribute to our project, check <a href="https://github.com/Vladislava05/TaskMaster/blob/main/Contributing.md">**this**</a>
 
 ## Contacts
 
