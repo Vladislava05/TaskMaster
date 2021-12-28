@@ -14,7 +14,7 @@
 This **TaskMaster** is an open source project created in order to help you keep your busy life in order and boost your productivity.
 
 **Link to our web-app**: https://todo-vladislava.herokuapp.com/ <br><br>
-<img src="https://github.com/Vladislava05/TaskMaster/blob/main/gif.gif" height=390 width=700></img>
+<img src="https://github.com/Vladislava05/TaskMaster/blob/main/gif.gif"></img>
 
 
 
