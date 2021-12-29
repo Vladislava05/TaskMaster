@@ -3,14 +3,14 @@
 {% block content %}
 
     <div class="header-bar">
-        <h1>Profile Settings</h1>
+        <h1>Edit Profile</h1>
         
         <a href="{% url 'tasks' %}">&#8592; Back</a>
         
     </div>
   
     <div class="card-body">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
             <input class="button" type="submit" value="Update">

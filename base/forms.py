@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.fields import TextField
 from django.forms import ModelForm, Textarea
 
-from .models import Task, Notion
+from .models import Task, Notion, Profile
 
 class PositionForm(forms.Form):
     position = forms.CharField()
@@ -23,7 +23,7 @@ class TaskForm(ModelForm):
 class NotionForm(ModelForm):
     class Meta:
         model = Notion
-        fields = ['title', 'body']
+        fields = ['user', 'title', 'body']
        
 
 
@@ -44,4 +44,11 @@ class EditProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields=['username', 'first_name', 'last_name',  'email']
-        
+
+
+class ProfileForm(ModelForm):
+  
+    
+    class Meta:
+        model = Profile
+        fields=['bio', 'profile_pic', 'facebook', 'twitter', 'instagram']

@@ -1,6 +1,10 @@
 # TaskMaster
-![GitHub forks](https://img.shields.io/github/forks/Vladislava05/TaskMaster?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/Vladislava05/TaskMaster?style=social)
+
+![Github issues](https://img.shields.io/github/issues/Vladislava05/TaskMaster.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://https://docker.com/)
+<br><br>
 ![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
 
 ## Overview
@@ -10,8 +14,8 @@
 
 This **TaskMaster** is an open source project created in order to help you keep your busy life in order and boost your productivity.
 
-**Link to our web-app**: https://todo-vladislava.herokuapp.com/
-
+**Link to our web-app**: https://todo-vladislava.herokuapp.com/ <br><br>
+<img src="https://github.com/Vladislava05/TaskMaster/blob/main/gif.gif"></img>
 
 
 
@@ -81,7 +85,7 @@ This **TaskMaster** is an open source project created in order to help you keep 
     foo@bar: TaskMaster $ heroku run python manage.py migrate
     ```
 ## Contributing ##
-If you want to contribute to our project, check **Contributing.md**
+If you want to contribute to our project, check <a href="https://github.com/Vladislava05/TaskMaster/blob/main/Contributing.md">**this**</a>
 
 ## Contacts
 

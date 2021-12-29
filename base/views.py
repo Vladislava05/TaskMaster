@@ -16,7 +16,7 @@ from django.contrib.auth import login
 from django.db.models import Count, Q
 
 from .models import Task, Profile, Notion
-from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm
+from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm, ProfileForm
 
 
 class CustomLoginView(LoginView):
@@ -129,9 +129,10 @@ class UserEditView(UpdateView):
     form_class = EditProfileForm
     template_name = 'base/edit_profile.html'
     success_url = reverse_lazy('tasks')
-
+    
     def get_object(self):
         return self.request.user
+
 
 class PasswordChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
@@ -148,6 +149,12 @@ class ShowProfilePageView(DetailView):
         context['page_user'] = page_user
         return context
 
+class EditProfilePageView(UpdateView):
+    model = Profile
+    template_name = 'base/edit_profile_page.html'
+    form_class=ProfileForm
+    
+    success_url = reverse_lazy('tasks')
 
 class NotionList(ListView):
     model = Notion
@@ -186,3 +193,14 @@ class DeleteNotiontView(DeleteView, LoginRequiredMixin):
      model = Notion
      template_name = 'base/notion_confirm_delete.html'
      success_url = reverse_lazy('notions')
+
+class CreateProfilePageView(CreateView):
+    model = Profile
+    
+    template_name = 'base/create_profile.html'
+    fields = ['profile_pic', 'bio', 'facebook', 'twitter', 'instagram']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    success_url = reverse_lazy('tasks')
