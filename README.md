@@ -19,9 +19,7 @@ This **TaskMaster** is an open source project created in order to help you keep 
 
 
 
-**Our Facebook**: https://www.facebook.com/groups/295736722419986
-
-**Our Twitter**: https://twitter.com/VlaDis005
+<a href="https://www.facebook.com/groups/295736722419986"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a> <a href="https://twitter.com/VlaDis005"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a>
 
 ## Contents
 
