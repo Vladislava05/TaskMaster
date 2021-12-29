@@ -3,6 +3,7 @@
 ![Github issues](https://img.shields.io/github/issues/Vladislava05/TaskMaster.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![Github Contributors](https://img.shields.io/github/contributors/Vladislava05/TaskMaster)
 [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://https://docker.com/)
 <br><br>
 ![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
