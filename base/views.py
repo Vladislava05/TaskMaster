@@ -184,15 +184,19 @@ class NotionCreate(LoginRequiredMixin, CreateView):
     form_class = NotionForm
     success_url = reverse_lazy('notions')
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(NotionCreate, self).form_valid(form)
+
 class NotionUpdate(LoginRequiredMixin, UpdateView):
     model = Notion
     template_name = 'base/notion_update.html'
     fields = ['title', 'body']
 
 class DeleteNotiontView(DeleteView, LoginRequiredMixin):
-     model = Notion
-     template_name = 'base/notion_confirm_delete.html'
-     success_url = reverse_lazy('notions')
+    model = Notion
+    template_name = 'base/notion_confirm_delete.html'
+    success_url = reverse_lazy('notions')
 
 class CreateProfilePageView(CreateView):
     model = Profile
