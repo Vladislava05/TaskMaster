@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import login
 from django.db.models import Count, Q
-
+from datetime import datetime
 from .models import Task, Profile, Notion
 from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm, ProfileForm
 
@@ -52,6 +52,7 @@ class RegisterPage(FormView):
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
+   
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
