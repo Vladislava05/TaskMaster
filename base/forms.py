@@ -23,8 +23,8 @@ class TaskForm(ModelForm):
 class NotionForm(ModelForm):
     class Meta:
         model = Notion
-        fields = ['user', 'title', 'body']
-       
+        fields = ['title', 'body']
+
 
 
 class SignUpForm(UserCreationForm):
