@@ -1,13 +1,21 @@
 {% extends 'base/main.html' %}
-{% block content %}
-<div class="container">
-<h1>Edit</h1>
 
-<form method="POST">
-    {% csrf_token %}
+{% block content %}
+
+    <div class="header-bar">
+        <h1>Edit Notes</h1>
+        
+        <a href="{% url 'tasks' %}">&#8592; Back</a>
+        
+    </div>
   
-    {{ form.as_p }}
-    <button>Update</button>
-</form>
-</div>
+    <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button" type="submit" value="Update">
+        </form>
+        
+    </div>
+
 {% endblock content %}
