@@ -3,6 +3,7 @@
 ![Github issues](https://img.shields.io/github/issues/Vladislava05/TaskMaster.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![Github Contributors](https://img.shields.io/github/contributors/Vladislava05/TaskMaster)
 [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://https://docker.com/)
 <br><br>
 ![Image](https://github.com/Vladislava05/TaskMaster/blob/main/peview.jpg)
@@ -12,10 +13,17 @@
 <h3 align="left">Built with:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-original.svg" alt="django" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
-This **TaskMaster** is an open source project created in order to help you keep your busy life in order and boost your productivity.
+This **TaskMaster** is an open source project created in order to help you keep your busy life in order and boost your productivity.<br><br>
+***Features:***
+* Keep your tasks and notes in one place
+* Reset your password if you want to
+* Create a profile for yourself
+* Choose between dark and light theme
+* Search for tasks and notes by key word
 
 **Link to our web-app**: https://todo-vladislava.herokuapp.com/ <br><br>
 <img src="https://github.com/Vladislava05/TaskMaster/blob/main/gif.gif"></img>
+
 
 
 

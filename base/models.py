@@ -23,7 +23,7 @@ class Task(models.Model):
         return self.title
 
     class Meta:
-        ordering=['due_date']
+        ordering=['complete']
 
 class Profile(models.Model):
     user=models.OneToOneField(User, null=True, on_delete=models.CASCADE)

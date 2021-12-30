@@ -18,12 +18,22 @@
     {% endif %}
       <p><strong>Username:</strong> {{ page_user }}</p><br><br>
       <p><strong>Bio:</strong> {{ profile.bio }}</p><br><br>
+      {% if profile.twitter %}
       <p><strong>Twitter:</strong> {{ profile.twitter }}</p><br><br>
+      {% endif %}
+      {% if profile.instagram %}
       <p><strong>Instagram:</strong> {{ profile.instagram }}</p><br><br>
+      {% endif %}
+      {% if profile.facebook %}
       <p><strong>Facebook:</strong> {{ profile.facebook }}</p><br><br>
+      {% endif %}
+
       {% if user.id == profile.user.id %}
       <a href="{% url 'edit_user_profile' profile.id %}"><button class="button">Edit</button></a>
       {% endif %}
+      
+    
+    
     </div>
 
 {% endblock content %}
