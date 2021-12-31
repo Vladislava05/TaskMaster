@@ -40,6 +40,8 @@
         {% endif %}
 
         <!-- Edit Profile -->
+        {% if user.id == profile.user.id %}
         <a href="{% url 'edit_user_profile' profile.id %}"><button class="button">Edit</button></a>
+        {% endif %}
     </div>
 {% endblock content %}
