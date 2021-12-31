@@ -11,17 +11,17 @@
     </div>
 
     <div class="card-body">
-        <!-- Show Profile avatar -->
+        <!-- Show Profile Avatar -->
         {% if profile.profile_pic %}
           <img src="{{ profile.profile_pic.url }}" height=100 width=100><br><br>
         {% else %}
             <img src="{% static 'base\images\profile\user.png' %}" height=100 width=100><br><br>
         {% endif %}
 
-        <!-- Show User username -->
+        <!-- Show User Username -->
         <p><strong>Username:</strong> {{ profile.user.username }}</p><br><br>
 
-        <!-- Show Profile biography -->
+        <!-- Show Profile Biography -->
         <p><strong>Bio:</strong> {{ profile.bio }}</p><br><br>
 
         <!-- Show Profile Twitter URL -->
