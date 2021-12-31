@@ -139,16 +139,23 @@ class PasswordChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
 
+
+# Profile detail view
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'base/user_profile.html'
 
     def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
+        user = self.request.user
+        number_tasks = user.tasks.count()
+        number_completed_tasks = user.tasks.filter(complete=True).count()
+
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-        context['page_user'] = page_user
+        context['number_tasks'] = number_tasks
+        context['number_completed_tasks'] = number_completed_tasks
+
         return context
+
 
 class EditProfilePageView(UpdateView):
     model = Profile
