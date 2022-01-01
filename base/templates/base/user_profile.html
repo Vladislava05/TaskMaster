@@ -5,7 +5,7 @@
     <div class="header-bar">
         <div>
             <h1>Profile</h1>
-            <h3 style="margin:0">You have <i style="color:yellow">{{ number_tasks }}</i> incomplete and <i style="color:yellow">{{ number_completed_tasks }}</i> complete tasks</h3>
+            <h3 style="margin:0">You have <i style="color:yellow">{{ number_completed_tasks }}</i> complete tasks</h3>
         </div>
         <a href="{% url 'tasks' %}">&#8592; Back</a>
     </div>
@@ -38,7 +38,35 @@
         {% if profile.facebook %}
             <p><strong>Facebook:</strong> {{ profile.facebook }}</p><br><br>
         {% endif %}
+        <p><strong>Achievements:</strong></p><br><br>
 
+        {% if number_tasks >= 1 %}
+        <img src="https://img.icons8.com/doodle/48/000000/laurel-wreath.png" title="Create your first task">
+        {% else %} 
+        <img style="opacity:0.5;" src="https://img.icons8.com/doodle/48/000000/laurel-wreath.png" title="Create your first task">
+        {% endif %}
+        {% if number_completed_tasks >= 1 %}
+        <img src="https://img.icons8.com/emoji/48/000000/bullseye.png" title="Complete your first task">
+        {% else %}
+        <img style="opacity:0.5;" src="https://img.icons8.com/emoji/48/000000/bullseye.png" title="Complete your first task">
+        {% endif %}
+        {% if number_completed_tasks >= 10 %}
+        <img src="https://img.icons8.com/clouds/48/000000/trophy--v2.png" title="Complete 10 tasks">
+        {% else %} 
+        <img style="opacity:0.5;" src="https://img.icons8.com/clouds/48/000000/trophy--v2.png" title="Complete 10 tasks">
+        {% endif %}
+        {% if number_completed_tasks >= 50 %} 
+        <img src="https://img.icons8.com/color/48/000000/bouldering.png" title="Complete 50 tasks">
+        {% else %} 
+        <img style="opacity:0.5;" src="https://img.icons8.com/color/48/000000/bouldering.png" title="Complete 50 tasks">
+        {% endif %}
+        {% if number_notes >= 3 %} 
+        <img src="https://img.icons8.com/emoji/48/000000/graduation-cap-emoji.png" title="Keep 3 notes">
+        {% else %} 
+        <img style="opacity:0.5;" src="https://img.icons8.com/emoji/48/000000/graduation-cap-emoji.png" title="Keep 3 notes">
+        {% endif %}
+        <br><br>
+        
         <!-- Edit Profile -->
         {% if user.id == profile.user.id %}
         <a href="{% url 'edit_user_profile' profile.id %}"><button class="button">Edit</button></a>

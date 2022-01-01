@@ -24,7 +24,7 @@
                     <ul class="ddropdownn-inside">
                         <li><a href="{% url 'top-users' %}">Top</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'notions' %}">Notions</a></li>
+                        <li><a href="{% url 'notions' %}">Notes</a></li>
                         <li><a href="{% url 'edit_profile' %}">Settings</a></li>
                         {% if user.profile.id %}
                         <li><a href="{% url 'user_profile' user.profile.id %}">Profile</a></li>

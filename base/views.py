@@ -39,8 +39,7 @@ class RegisterPage(FormView):
         if user is not None:
             login(self.request, user)
         return super(RegisterPage, self).form_valid(form)
-        if User.objects.filter(username = request.POST['username']).exists():
-              print('Already taken')
+     
 
 
     def get(self, *args, **kwargs):
@@ -140,7 +139,18 @@ class PasswordChangeView(PasswordChangeView):
     success_url = reverse_lazy('login')
 
 
-# Profile detail view
+# Profile view
+class CreateProfilePageView(CreateView):
+    model = Profile
+    
+    template_name = 'base/create_profile.html'
+    fields = ['profile_pic', 'bio', 'facebook', 'twitter', 'instagram']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    success_url = reverse_lazy('tasks')
+
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'base/user_profile.html'
@@ -148,13 +158,16 @@ class ShowProfilePageView(DetailView):
     def get_context_data(self, *args, **kwargs):
         user = self.request.user
         number_tasks = user.tasks.count()
+        number_notes = user.notions.count()
         number_completed_tasks = user.tasks.filter(complete=True).count()
 
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
         context['number_tasks'] = number_tasks
+        context['number_notes'] = number_notes
         context['number_completed_tasks'] = number_completed_tasks
 
         return context
+
 
 
 class EditProfilePageView(UpdateView):
@@ -206,13 +219,4 @@ class DeleteNotiontView(DeleteView, LoginRequiredMixin):
     template_name = 'base/notion_confirm_delete.html'
     success_url = reverse_lazy('notions')
 
-class CreateProfilePageView(CreateView):
-    model = Profile
-    
-    template_name = 'base/create_profile.html'
-    fields = ['profile_pic', 'bio', 'facebook', 'twitter', 'instagram']
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
 
-    success_url = reverse_lazy('tasks')
