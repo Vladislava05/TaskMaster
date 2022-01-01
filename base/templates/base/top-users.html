@@ -19,7 +19,7 @@
             
 
                 <div class="top-list">
-                  <h4>{{ user.username }}</h4></li>
+                  <h4><a href="{% url 'user_profile' pk=user.pk %}">{{ user.username }}</a></h4></li>
             
                   <div class="value"><h4>{{ user.task_completed }}</h4></div>
             
