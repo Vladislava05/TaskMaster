@@ -20,6 +20,7 @@ This **TaskMaster** is an open source project created in order to help you keep 
 * Create a profile for yourself
 * Choose between dark and light theme
 * Search for tasks and notes by key word
+* Complete all achievements
 
 **Link to our web-app**: https://todo-vladislava.herokuapp.com/ <br><br>
 <img src="https://github.com/Vladislava05/TaskMaster/blob/main/gif.gif"></img>
