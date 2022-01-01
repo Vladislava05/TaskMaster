@@ -156,7 +156,7 @@ class ShowProfilePageView(DetailView):
     template_name = 'base/user_profile.html'
 
     def get_context_data(self, *args, **kwargs):
-        user = self.request.user
+        user = get_object_or_404(User, pk=self.kwargs.get('pk'))
         number_tasks = user.tasks.count()
         number_notes = user.notions.count()
         number_completed_tasks = user.tasks.filter(complete=True).count()
