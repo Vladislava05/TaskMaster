@@ -45,10 +45,16 @@ class EditProfileForm(UserChangeForm):
         model = User
         fields=['username', 'first_name', 'last_name',  'email']
 
-
 class ProfileForm(ModelForm):
   
     
     class Meta:
         model = Profile
         fields=['bio', 'profile_pic', 'facebook', 'twitter', 'instagram']
+
+class ContactForm(forms.Form):
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=40)
+    email = forms.EmailField(max_length=50)
+    topic = forms.CharField(max_length=150)
+    message = forms.CharField(widget=forms.Textarea, max_length=1000)

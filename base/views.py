@@ -1,8 +1,9 @@
 import operator
 
-from django.http.response import Http404
+from django.http.response import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
+from django.core.mail import send_mail, BadHeaderError
 from django.views.generic import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -16,7 +17,7 @@ from django.contrib.auth import login
 from django.db.models import Count, Q
 from datetime import datetime
 from .models import Task, Profile, Notion
-from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm, ProfileForm
+from .forms import EditProfileForm, SignUpForm, TaskForm, NotionForm, ProfileForm, ContactForm
 
 
 class CustomLoginView(LoginView):
@@ -218,5 +219,29 @@ class DeleteNotiontView(DeleteView, LoginRequiredMixin):
     model = Notion
     template_name = 'base/notion_confirm_delete.html'
     success_url = reverse_lazy('notions')
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = "Test message"
+            body = {
+                'first_name':  form.cleaned_data['first_name'],
+                'last_name': form.cleaned_data['last_name'],
+                'email': form.cleaned_data['email'],
+                'topic': form.cleaned_data['topic'],
+                'message': form.cleaned_data['message'],
+            }
+            message = "\n".join(body.values())
+            try:
+                send_mail(subject, message, 
+                          'vladislavac74@gmail.com',
+                          ['vladislavac74@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Found incorrect title')
+            return redirect("tasks")
+
+    form = ContactForm()
+    return render(request, "base/contact.html", {'form': form})
 
 

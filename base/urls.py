@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
-
+from base import views
 from .views import *
 
 urlpatterns = [
@@ -28,4 +28,5 @@ urlpatterns = [
     path('notion/update/<int:pk>/', NotionUpdate.as_view(), name ='notion-update'),
     path('notion/<int:pk>/', NotionDetail.as_view(), name ='notion'),
     path('notion/<int:pk>/delete', DeleteNotiontView.as_view(), name ='notion-delete'),
+    path('contact/', views.contact, name="contact")
 ]
