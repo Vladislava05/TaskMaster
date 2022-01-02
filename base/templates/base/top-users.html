@@ -19,8 +19,11 @@
             
 
                 <div class="top-list">
+                {% if user.profile.pk %}
                   <h4><a href="{% url 'user_profile' pk=user.pk %}">{{ user.username }}</a></h4></li>
-            
+                {% else %} 
+                  <h4 title="user has no profile">{{user.username}}</h4>
+                {% endif %}
                   <div class="value"><h4>{{ user.task_completed }}</h4></div>
             
                 </div>
