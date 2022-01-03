@@ -47,7 +47,7 @@ a:hover{
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: rgba(204, 200, 200, 0.829);
+    background-color: rgba(245, 239, 239, 0.979);
     border-top: 1px solid rgb(226, 226, 226);
 }
 
@@ -62,7 +62,7 @@ a:hover{
 .task-complete-icon {
     height: 20px;
     width: 20px;
-    background-color: rgb(45, 99, 45);
+    background-color: rgb(60, 145, 60);
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -97,7 +97,7 @@ input[type=text], input[type=password], input[type=date], textarea {
     border-radius: 5px;
     padding: 10px;
     width: 90%;
-    background-color: rgba(204, 200, 200, 0.829);
+    background-color: rgba(250, 245, 245, 0.979);
 }
 
 label {
@@ -195,14 +195,10 @@ label {
    
 }
 
-.value {
-    color: #EB796F;
-}
-
 .for-top{
     display: flex;
     justify-content: space-between;
-    color:darkgrey;
+    color:rgb(243, 241, 241);
     border-bottom: 1px solid darkgrey;
 }
 
