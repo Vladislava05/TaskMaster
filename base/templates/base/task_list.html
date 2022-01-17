@@ -62,7 +62,11 @@
                 {% else %}
                     <div class="task-title">
                         <div class="task-incomplete-icon"></div>
-                        <a href="{% url 'task-update' task.id %}">{{task}}|{{task.due_date}}</a>
+                        {%if task.due_date|timesince >= "1 day" %}
+                        <a href="{% url 'task-update' task.id %}" style="color: red;">{{task}} | {{task.due_date|date:"M, j, Y" }}</a>
+                        {% else %}
+                        <a href="{% url 'task-update' task.id %}">{{task}} | {{task.due_date|date:"M, j, Y" }}</a>
+                        {% endif %}
                     </div>
                     <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
                 {% endif %}
